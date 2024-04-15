@@ -1,0 +1,16 @@
+{
+    "name": "cs160-starter-code-p2",
+    "version": "1.0.0",
+    "description": "MusicMemo",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "author": "Gaslighting Guitar Gorillas",
+    "license": "UNLICENSED",
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }
+  
