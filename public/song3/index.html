@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title> POC </title>
+</head>
+<body>
+
+<div>
+	<h2>3: Sheet music: midi, audio: midi</h2>
+	<li>Play audio and visualize using <a href="https://cifkao.github.io/html-midi-player/">html midi player</a></li>
+	<h3> Pros </h3>
+	<ul>
+		<li><a> real-time music playing and progress bar</a></li>
+    </ul>
+	<h3> Cons </h3>
+	<ul>
+        <li><a>sheet looks weird on some midi files</a></li>
+		<li><a>support piano</a></li>
+		<li><a>not sure how to implement annotating</a></li>
+    </ul>
+	<midi-player
+  		src="../resources/canonpiano.mid"
+  		sound-font visualizer="#myStaffVisualizer">
+	</midi-player>
+
+<midi-visualizer type="staff" id="myStaffVisualizer" 
+  src="../resources/canonpiano.mid">
+</midi-visualizer>
+
+<script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+<div/>
+
+
+</body>
+</html>

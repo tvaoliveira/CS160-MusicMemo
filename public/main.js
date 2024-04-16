@@ -1,0 +1,2 @@
+import {AnnotationFactory} from 'annotpdf';
+

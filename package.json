@@ -1,0 +1,22 @@
+{
+  "name": "cs160-musicmemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tvaoliveira/CS160-MusicMemo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tvaoliveira/CS160-MusicMemo/issues"
+  },
+  "homepage": "https://github.com/tvaoliveira/CS160-MusicMemo#readme",
+  "dependencies": {
+    "annotpdf": "^1.0.15",
+    "express": "^4.19.2",
+    "midi-player-js": "^2.0.16"
+  }
+}
