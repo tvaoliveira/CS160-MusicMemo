@@ -1,18 +1,18 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './App.css';
 import AudioPlayer from 'react-h5-audio-player';
+import 'html-midi-player';
 import 'react-h5-audio-player/lib/styles.css';
-import { OpenSheetMusicDisplay as OSMD, Fraction, MusicSystem } from 'opensheetmusicdisplay';
+import { OpenSheetMusicDisplay as OSMD } from 'opensheetmusicdisplay';
 import wet_hands from './files/Wet_Hands_Minecraft.mxl';
 import wethandsmp3 from './files/Wet_Hands_Minecraft.mp3';
+import wethandsmidi from './files/Wet_Hands_Minecraft.mid';
 import line from './files/line.png';
 
 function SheetComponent() {
   const [loaded, setLoaded] = useState(false);
   const [currOsmd, defOsmd] = useState();
   const [intervalId, setIntervalId] = useState();
-  const [buffering, setBuffering] = useState(false);
-  const [standby, setStandby] = useState(true);
   const audioRef = useRef();
 
 
@@ -65,34 +65,26 @@ function SheetComponent() {
     var timeMs = audioRef.current.audio.current.currentTime * 1000;
     var reps = Math.floor(timeMs / 405.405405);
     playReps(reps);
-    setStandby(true);
-    setBuffering(false);
     audioRef.current.audio.current.currentTime = reps * 405.405405;
   }
 
   return (
     <div>
+      <div>
+        <midi-player
+          src={wethandsmidi}
+          sound-font visualizer="#myVisualizer">
+        </midi-player>
+        <midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+      </div>
+      <br></br><br></br><br></br><br></br>
       <AudioPlayer
         src={wethandsmp3}
         onPlay={() => {
           startPlaying();
-          setStandby(false);
         }}
         onPause={() => {
-          if (!buffering && !standby) {
-            console.log('paused');
-            setBuffering(true);
-            clearInterval(intervalId);
-            recalculate();
-          }
-        }}
-        onSeeked={() => {
-          if (!buffering && !standby) {
-            console.log('seeked');
-            setBuffering(true);
-            clearInterval(intervalId);
-            recalculate();
-          }
+          clearInterval(intervalId);
         }}
         ref={audioRef}
       />
@@ -113,7 +105,7 @@ function SheetComponent() {
         BUTTON3
       </button>
       <button onClick={() => {
-        setBuffering(false);
+
       }}>
         BUTTON4
       </button>
