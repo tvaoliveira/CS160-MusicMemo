@@ -1,1 +1,37 @@
-<h1>Music library goes here</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cannon in D</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Cannon in D</h1>
+    </header>
+    <main>
+
+        <section id="music_player" class="music-section">
+            <midi-player
+                src="../music_source/cannon/Cannon_in_D.mid"
+                sound-font
+                visualizer="#music_visualizer">
+            </midi-player>
+            <midi-visualizer
+                id="music_visualizer"
+                src="../music_source/cannon/Cannon_in_D.mid">
+            </midi-visualizer>
+        </section>
+
+        <iframe class="pdf-viewer" 
+                src="../music_source/cannon/Cannon_in_D.pdf"
+                title="Cannon in D Score">
+        </iframe>
+        
+    </main>
+</body>
+</html>
