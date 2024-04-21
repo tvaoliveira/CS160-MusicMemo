@@ -82,6 +82,10 @@ app.get('/gallery', (request, response) => {
     response.status(200).sendFile('public/gallery.html', { root: __dirname });
 });
 
+app.get('/chatbot', (request, response) => {
+  response.status(200).sendFile('public/chatbot.html', { root: __dirname });
+});
+
 app.get('/index', (request, response) => {
   response.status(200).sendFile('public/', { root: __dirname });
 });
