@@ -56,7 +56,7 @@
     top: 0;
     left: 0;
     background: rgba(128, 128, 128, 0.336);
-    padding-top: 5%;
+    padding-top: 3%;
 }
 
 .sidebar h1 {
@@ -67,11 +67,37 @@
     padding-right: 3%;
 }
 
+.chatbot-toggler {
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+  background: #724ae8;
+}
+body.show-chatbot .chatbot-toggler {
+  transform: rotate(90deg);
+}
+.chatbot-toggler span {
+  color: #fff;
+  position: absolute;
+}
+.chatbot-toggler span:last-child,
+body.show-chatbot .chatbot-toggler span:first-child  {
+  opacity: 0;
+}
+body.show-chatbot .chatbot-toggler span:last-child {
+  opacity: 1;
+}
+
 .chatbot {
     position: relative;
     margin: auto;
     width: 85%;
-    height: 55vh;
+    height: 65vh;
     background: white;
     border-radius: 15px;
     border-style: inset;
@@ -91,8 +117,9 @@
   }
   .chatbot .chatbox {
     overflow-y: auto;
-    height: 510px;
-    padding: 20px 20px 100px;
+    height: 220px;
+    padding: 15px 15px 100px;
+    scroll-margin: 100%;
   }
   .chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
     width: 6px;
@@ -138,8 +165,8 @@
     border-radius: 10px 10px 10px 0;
   }
   .chatbox .chat p.error {
-    color: #721c24;
-    background: #f8d7da;
+    color: white;
+    background: rgba(139, 35, 52, 0.694);
   }
   .chatbox .incoming p {
     color: #000;
