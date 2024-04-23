@@ -56,7 +56,8 @@
     top: 0;
     left: 0;
     background: rgba(128, 128, 128, 0.336);
-    padding-top: 3%;
+    /* padding-top: 3%; */
+    display: none;
 }
 
 .sidebar h1 {
@@ -71,26 +72,22 @@
   position: fixed;
   height: 50px;
   width: 50px;
-  display: flex;
+  display: block;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   border-radius: 10%;
-  background: #724ae8;
+  border-style: none;
+  background: rgb(237, 179, 188);
+  /* top: 0;
+  left: 0; */
 }
-body.show-chatbot .chatbot-toggler {
-  transform: rotate(90deg);
-}
-.chatbot-toggler span {
-  color: #fff;
-  position: absolute;
-}
-.chatbot-toggler span:last-child,
-body.show-chatbot .chatbot-toggler span:first-child  {
-  opacity: 0;
-}
-body.show-chatbot .chatbot-toggler span:last-child {
-  opacity: 1;
+
+#toggle2 {
+  position: relative;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-left: auto;
 }
 
 .chatbot {

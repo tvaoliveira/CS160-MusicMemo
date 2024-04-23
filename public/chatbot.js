@@ -1,8 +1,11 @@
 const chatbotToggler = document.querySelector(".chatbot-toggler");
-// const closeBtn = document.querySelector(".close-btn");
 const chatbox = document.querySelector(".chatbox");
 const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
+const sidebar = document.querySelector(".sidebar");
+const toggle1 = document.querySelector("#toggle1")
+const toggle2 = document.querySelector("#toggle2")
+
 
 let userMessage = null; // Variable to store user's message
 const API_KEY = "PASTE-YOUR-API-KEY"; // Paste your API key here
@@ -81,5 +84,11 @@ chatInput.addEventListener("keydown", (e) => {
 });
 
 sendChatBtn.addEventListener("click", handleChat);
-// closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
-// chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+toggle1.addEventListener("click", () => {
+    toggle1.style.display = 'none';
+    sidebar.style.display = 'block';
+});
+toggle2.addEventListener("click", () => {
+    toggle1.style.display = 'block';
+    sidebar.style.display = 'none';
+});
