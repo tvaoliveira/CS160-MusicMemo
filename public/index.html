@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MusicMemo</title>
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Fira+Sans"
-      rel="stylesheet"
-    />
-    <!-- let's include the css file for bootstrap, then our custom css -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/vendor/bootstrap/css/bootstrap.css"
-    />
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
-  </head>
+<head>
+  <title>MusicMemo</title>
 
-  <body id="firstPage">
-    <h1 id="musicMemo">MusicMemo</h1>
-    <img src="/images/MusicMemoLogo.png" alt="Logo" width="400" height="400" class="center" style="margin-bottom: 4%;">
-    <div>
-      <a href="/login" class="mainButtons shadowButton">Login</a>
-      <a href="/signUp" class="mainButtons shadowButton">Sign Up</a>
-    </div>
-  </body>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet" />
+  <!-- let's include the css file for bootstrap, then our custom css -->
+  <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.css" />
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+</head>
+
+<body id="firstPage">
+  <h1 id="musicMemo">MusicMemo</h1>
+  <img src="/images/MusicMemoLogo.png" alt="Logo" width="400" height="400" class="center" style="margin-bottom: 4%;">
+  <div>
+    <!-- NOTE: temporarily direct to music library page on login click. change if we implement login and sign up pages -->
+    <a href="/library" class="mainButtons shadowButton">Login</a>
+    <a href="/signUp" class="mainButtons shadowButton">Sign Up</a>
+  </div>
+</body>
+
 </html>
