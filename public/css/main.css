@@ -53,9 +53,10 @@
     width: 25%;
     height: 100vh;
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
-    background: rgba(128, 128, 128, 0.336);
+    background: rgb(195, 195, 195);
     /* padding-top: 3%; */
     display: none;
 }
@@ -63,9 +64,11 @@
 .sidebar h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;
+    color: #000;
     text-align: center;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 2%
 }
 
 .chatbot-toggler {
@@ -83,17 +86,23 @@
   left: 0; */
 }
 
+#toggle1 {
+  position: absolute;
+}
+
 #toggle2 {
   position: relative;
   margin-top: 2%;
   margin-right: 2%;
   margin-left: auto;
+  margin-bottom: 2%;
 }
 
 .chatbot {
     position: relative;
     margin: auto;
-    width: 85%;
+    margin-top: 20px;
+    width: 90%;
     height: 65vh;
     background: white;
     border-radius: 15px;
@@ -106,15 +115,20 @@
 
 .chatbot header {
     padding: 1%;
+    height: 10vh;
     position: relative;
     text-align: center;
     color: #fff;
     background: rgba(243, 86, 112, 0.364);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
+  .chatbot header h2 {
+    margin-top: 18px;
+    font-family: 'Times New Roman', Times, serif;
+  }
   .chatbot .chatbox {
     overflow-y: auto;
-    height: 220px;
+    height: 330px;
     padding: 15px 15px 100px;
     scroll-margin: 100%;
   }
@@ -156,6 +170,8 @@
     max-width: 75%;
     color: #fff;
     font-size: 0.95rem;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 20px;
     background: rgba(243, 86, 112, 0.364);
   }
   .chatbox .incoming p {
@@ -174,14 +190,14 @@
     gap: 5px;
     position: absolute;
     bottom: 0;
-    width: 87%;
+    width: 100%;
     background: #fff;
     padding: 3px 20px;
     border-top: 1px solid #ddd;
     border-radius: 0px 0px 15px 15px;
   }
   .chat-input textarea {
-    height: 50px;
+    height: 80px;
     width: 100%;
     border: none;
     outline: none;

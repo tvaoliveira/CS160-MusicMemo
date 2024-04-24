@@ -64,7 +64,12 @@ header {
   color: #ffffff;
   padding: 10px 20px;
   text-align: center;
+  align-items: center;
 }
+
+/* header h2 {
+  text-align: right;
+} */
 
 main {
   justify-content: center;
