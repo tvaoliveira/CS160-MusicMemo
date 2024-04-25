@@ -6,13 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="icon" type="image/png" href="/images/musememo-favicon.png">
     <script
         src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
 </head>
 
 <body>
-    <h1>Will implement later! For now, click continue to gallery</h1>
-    <a href="/gallery">Continue to Gallery!</a>
+    <header>
+        <div class="header-left">
+            <button class="chatbot-toggler" id="toggle1">
+                <img class="center" src="/images/tribar.png">
+            </button>
+            <img src="/images/MusicMemoLogo-transparent.png" alt="musicmemo logo">
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <button class="chatbot-toggler" id="toggle2">
+            <img class="center" src="/images/left-arrow.png">
+        </button>
+        <h1>Have a question?</h1>
+        <h1>Ask our AI Chatbot Melody!</h1>
+
+        <div class="chatbot">
+            <header>
+                <h2>Melody</h2>
+            </header>
+            <ul class="chatbox">
+                <li class="chat incoming">
+                    <span>M</span>
+                    <p>Hi there 👋<br>How can I help you?</p>
+                </li>
+            </ul>
+            <div class="chat-input">
+                <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+                <span id="send-btn">send</span>
+            </div>
+        </div>
+    </div>
+    <script src="chatbot.js"></script>
+    <main>
+        <h1>Your library</h1>
+        <div class="shelf">
+            <div class="song-item">
+                <a href="/gallery">
+                    <img src="/images/pachelbel-cover.png" alt="music cover">
+                </a>
+                <div class="song-title">Canon in D</div>
+                <div class="artist-name">Johann Pachelbel</div>
+            </div>
+            <div class="song-item">
+                <img src="/images/c418-cover.jpg" alt="music cover">
+                <div class="song-title">Wet Hands</div>
+                <div class="artist-name">C418</div>
+            </div>
+        </div>
+        <!-- <h1>Will implement later! For now, click continue to gallery</h1>
+        <a href="/gallery">Continue to Gallery!</a> -->
+
+
+    </main>
+
 </body>
 
 </html>
