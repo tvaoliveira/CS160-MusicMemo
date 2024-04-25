@@ -5,6 +5,7 @@ const sendChatBtn = document.querySelector(".chat-input span");
 const sidebar = document.querySelector(".sidebar");
 const toggle1 = document.querySelector("#toggle1")
 const toggle2 = document.querySelector("#toggle2")
+const toggleIcon = document.querySelector(".center");
 
 
 let userMessage = null; // Variable to store user's message
@@ -113,8 +114,21 @@ chatInput.addEventListener("keydown", (e) => {
 });
 
 sendChatBtn.addEventListener("click", handleChat);
+
+// single toggle menu (can change back by comment/uncommenting if desired)
+// toggle1.addEventListener("click", () => {
+//     if (sidebar.style.display == 'none' || sidebar.style.display == '') {
+//         sidebar.style.display = 'block';
+//         toggleIcon.src = "/images/left-arrow.png";
+//     } else {
+//         sidebar.style.display = 'none';
+//         toggleIcon.src = "/images/tribar.png";
+//     }
+// });
+
+// Teresa's first implementation
 toggle1.addEventListener("click", () => {
-    toggle1.style.display = 'none';
+    // toggle1.style.display = 'none';
     sidebar.style.display = 'block';
 });
 toggle2.addEventListener("click", () => {

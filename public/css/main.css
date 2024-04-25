@@ -73,9 +73,10 @@
 }
 
 .chatbot-toggler {
-  position: fixed;
-  height: 50px;
-  width: 50px;
+  /* position: fixed; */
+  /* z-index: 10; */
+  height: 40px;
+  width: 40px;
   display: block;
   cursor: pointer;
   align-items: center;
@@ -83,19 +84,26 @@
   border-radius: 10%;
   border-style: none;
   background: rgb(237, 179, 188);
+
   /* top: 0;
   left: 0; */
 }
 
-#toggle1 {
-  position: absolute;
+.chatbot-toggler:active {
+  background: rgb(178, 133, 139);
+  /* transition: background .2s linear; */
 }
+
+/* #toggle1 {
+  position: absolute;
+} */
 
 #toggle2 {
   position: relative;
   margin-top: 2%;
   margin-right: 2%;
-  margin-left: auto;
+  margin-left: 20px;
+  /* margin-left: auto; */
   margin-bottom: 2%;
 }
 
