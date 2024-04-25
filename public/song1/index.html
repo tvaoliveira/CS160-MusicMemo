@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title> POC </title>
+</head>
+<body>
+
+<!-- You need to set up a local server, see README. Might fail due to CORS restrictions. -->
+<!-- (run http-server ./resources -p 8080 --cors before this) -->
+
+<div>
+	<h2>1: Sheet music: embed pdf, audio: midi file</h2>
+	<li>Download midi file from <a href="https://bitmidi.com/">Bitmidi</a></li>
+	<li>Convert midi to pdf using <a href="https://musescore.org/en">MusicScore</a></li>
+	<li>Embed pdf using iframe</li>
+	<li>Play audio using <a href="https://cifkao.github.io/html-midi-player/">html midi player</a></li>
+	<h3> Pros </h3>
+	<ul>
+        <li><a>built-in functions e.g. highlight, erase, text, download, zoom in (ONLY in Edge browser)</a></li>
+		<li><a>easy to implement</a></li>
+    </ul>
+	<h3> Cons </h3>
+	<ul>
+		<li><a>annotating function depends on the browser</a></li>
+        <li><a>lack novelty</a></li>
+		<li><a>no progress bar on sheet music</a></li>
+    </ul>
+	<script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+	<midi-player
+		id="midi-player"
+		style="width: 80%;"
+  		src="../resources/canonpiano.mid"
+		sound-font="https://storage.googleapis.com/magentadata/js/soundfonts/sgm_plus">
+	</midi-player>
+
+	<iframe class="pdf" 
+			src="../resources/canonpiano.pdf"
+			width="1800" height="3000">
+	</iframe>
+</div>
+
+</body>
+</html>

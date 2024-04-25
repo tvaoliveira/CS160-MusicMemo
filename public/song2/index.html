@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title> POC </title>
+</head>
+<body>
+<div>
+	<h2>2: Sheet music: mxl file, audio: ??</h2>
+	<li>Download mxl file</li>
+	<li>Render mxl file using <a href="https://github.com/opensheetmusicdisplay/opensheetmusicdisplay">Open Sheet Music Display (OSMD)</a></li>
+	
+	<h3> Pros </h3>
+	<ul>
+		<li><a>looks better than embedding a pdf</a></li>
+    </ul>
+	<h3> Cons </h3>
+	<ul>
+        <li><a>not sure how to implement annotating</a></li>
+		<li><a>OMSD does not support audio at this time</a></li>
+		<li><a>hard to find exact audio that matches the sheet music</a></li>
+		<li><a>delay in music sheet rendering</a></li>
+    </ul>
+<div id="osmdCanvas"/>
+<script src="../opensheetmusicdisplay.min.js"></script> <!-- you need to provide the .js file, see README.md-->
+<script>
+
+  var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
+  osmd.load("../resources/Pachelbel - Canon in D.mxl").then(
+    function() {
+      osmd.render();
+    }
+  );
+</script>
+
+
+
+</body>
+</html>
