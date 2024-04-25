@@ -2,67 +2,68 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cannon in D</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cannon in D</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <script
+    src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
 </head>
 
 <body>
-    <header>
-        <button class="chatbot-toggler" id="toggle1">
-            <img class="center" src="/images/tribar.png">
-        </button>
-        <h1>Cannon in D</h1>
-        <!-- <h2>Back to Gallery</h2> -->
-    </header>
-
-    <div class="sidebar">
-        <button class="chatbot-toggler" id="toggle2">
-          <img class="center" src="/images/tribar.png">
-        </button>
-        <h1>Have a question?</h1>
-        <h1>Ask our AI Chatbot Melody!</h1>
-
-        <div class="chatbot">
-            <header>
-              <h2>Melody</h2>
-            </header>
-            <ul class="chatbox">
-              <li class="chat incoming">
-                <span>M</span>
-                <p>Hi there 👋<br>How can I help you?</p>
-              </li>
-            </ul>
-            <div class="chat-input">
-              <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
-              <span id="send-btn">send</span>
-            </div>
-        </div>
+  <header>
+    <div class="header-left">
+      <button class="chatbot-toggler" id="toggle1">
+        <img class="center" src="/images/tribar.png">
+      </button>
+      <img src="/images/MusicMemoLogo-transparent.png" alt="musicmemo logo">
     </div>
-    <script src="chatbot.js"></script>
+    <div class="header-right">
+      <h2>Cannon in D</h2>
+      <h3>Johann Pachelbel</h3>
+      <!-- <h2>Back to Gallery</h2> -->
+    </div>
+  </header>
 
-    <main>
+  <div class="sidebar">
+    <button class="chatbot-toggler" id="toggle2">
+      <img class="center" src="/images/left-arrow.png">
+    </button>
+    <h1>Have a question?</h1>
+    <h1>Ask our AI Chatbot Melody!</h1>
 
-        <section id="music_player" class="music-section">
-            <midi-player
-                src="../music_source/cannon/Cannon_in_D.mid"
-                sound-font
-                visualizer="#music_visualizer">
-            </midi-player>
-            <midi-visualizer
-                id="music_visualizer"
-                src="../music_source/cannon/Cannon_in_D.mid">
-            </midi-visualizer>
-        </section>
+    <div class="chatbot">
+      <header>
+        <h2>Melody</h2>
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <span>M</span>
+          <p>Hi there 👋<br>How can I help you?</p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+        <span id="send-btn">send</span>
+      </div>
+    </div>
+  </div>
+  <script src="chatbot.js"></script>
 
-        <iframe class="pdf-viewer" 
-                src="../music_source/cannon/Cannon_in_D.pdf"
-                title="Cannon in D Score">
-        </iframe>
-        
-    </main>
+  <main>
+
+    <section id="music_player" class="music-section">
+      <midi-player src="../music_source/cannon/Cannon_in_D.mid" sound-font visualizer="#music_visualizer">
+      </midi-player>
+      <midi-visualizer id="music_visualizer" src="../music_source/cannon/Cannon_in_D.mid">
+      </midi-visualizer>
+    </section>
+
+    <iframe class="pdf-viewer" src="../music_source/cannon/Cannon_in_D.pdf" title="Cannon in D Score">
+    </iframe>
+
+  </main>
 </body>
+
 </html>
