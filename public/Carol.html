@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carol of the Bells</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <script
+    src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+  <script type="module" src="./Carol.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <button class="chatbot-toggler" id="toggle1">
+        <img class="center" src="/images/tribar.png">
+      </button>
+      <a href="/library" style="margin-top: 7px; cursor: pointer;"><img src="/images/MusicMemoLogo-transparent.png"
+          alt="musicmemo logo"></a>
+
+    </div>
+    <div class="header-right">
+      <h2 id="song-title">Carol of the Bells </h2>
+      <h3>William J. Rose</h3>
+      <!-- <h2>Back to Gallery</h2> -->
+    </div>
+  </header>
+
+  <div class="sidebar">
+    <button class="chatbot-toggler" id="toggle2">
+      <img class="center" src="/images/left-arrow.png">
+    </button>
+    <div class="menu-buttons">
+      <a href="/library" class="nav-button">Library</a>
+      <a class="nav-button" style="color: rgb(235, 140, 152); background-color: #dddddd;">Music Room</a>
+      <a href="/" class="nav-button">Logout</a>
+    </div>
+
+    <div class="info-text-box">
+      <div class="info-text">Have a question?</div>
+      <div class="info-text">Ask our AI Chatbot Melody!</div>
+    </div>
+
+    <div class="chatbot">
+      <header>
+        <h2>Melody</h2>
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <span>M</span>
+          <p>Hi there 👋<br>How can I help you?</p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+        <span id="send-btn">send</span>
+      </div>
+    </div>
+  </div>
+  <script src="chatbot.js"></script>
+
+  <main>
+
+    <section id="music_player" class="music-section">
+      <midi-player src="../music_source/Carol_of_the_Bells/Carol_of_the_Bells.mid" sound-font visualizer="#music_visualizer">
+      </midi-player>
+      <midi-visualizer id="music_visualizer" src="../music_source/Carol_of_the_Bells/Carol_of_the_Bells.mid">
+      </midi-visualizer>
+    </section>
+
+    <div id="pspdfkit" style="width: 100%; height: 100vh;"></div>
+
+  </main>
+</body>
+
+</html>
