@@ -50,6 +50,10 @@
   display: flex;
 }
 
+.header-right {
+
+}
+
 .sidebar {
   width: 25%;
   height: 100vh;
@@ -258,10 +262,8 @@
 
 .nav-button {
   display: block;
-  width: 100%;
   margin: 0;
   padding: 16px;
-  background-color: #dddddd;
   color: #000;
   border: none;
   cursor: pointer;
@@ -288,8 +290,10 @@
 }
 
 .info-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
   width: 90%;
   padding-left: 5%;
-  font-size: 18px;
+  font-size: 20px;
   color: #666;
 }
