@@ -58,6 +58,10 @@
   top: 0;
   left: 0;
   background: #dddddd;
+
+  /* potential background color from bootstrap */
+  /* background: 248, 249, 250; */
+
   /* padding-top: 3%; */
   display: none;
 }
@@ -245,4 +249,47 @@
 
 .chat-input textarea:valid~span {
   visibility: visible;
+}
+
+/* sidebar nav buttons */
+.nav-buttons {
+  margin-top: 20px;
+}
+
+.nav-button {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 16px;
+  background-color: #dddddd;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s;
+  text-align: left;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: rgb(234, 185, 192);
+}
+
+
+/* informational text */
+.info-text-box {
+  background-color: #cccccc;
+  position: relative;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.info-text {
+  width: 90%;
+  padding-left: 5%;
+  font-size: 18px;
+  color: #666;
 }
