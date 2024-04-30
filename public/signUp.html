@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Signup Form</title>
-<!-- Include Bootstrap CSS from CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Form</title>
+  <!-- Include Bootstrap CSS from CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="images/MusicMemoLogo.png" width="85" height="60" alt="">
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="images/MusicMemoLogo-transparent.png" width="85" height="60" alt="">
 
-    <a class="navbar-brand" href="#">Music Memo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Sorry, I know the inline css is ugly but its quick. -->
+    <a class="navbar-brand" href="#" style="padding-left: 1rem;">Music Memo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -33,46 +36,48 @@
 
 
 </head>
+
 <body>
-<div class="container mt-5">
+  <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Signup</h5>
-                    <form id="form">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Signup</button>
-                    </form>
-                </div>
-            </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Signup</h5>
+            <form id="form">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Signup</button>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<script>
-    document.getElementById('form').addEventListener('submit', function(e) {
-        e.preventDefault();
+  </div>
+  <script>
+    document.getElementById('form').addEventListener('submit', function (e) {
+      e.preventDefault();
 
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
 
-        if (email.trim() === "" || password.trim() === "") {
-            alert("Please fill in all fields.");
-            return;
-        }
+      if (email.trim() === "" || password.trim() === "") {
+        alert("Please fill in all fields.");
+        return;
+      }
 
-        localStorage.setItem('userEmail', email);
-        localStorage.setItem('userPassword', password); // Storing passwords in local storage is not secure.
+      localStorage.setItem('userEmail', email);
+      localStorage.setItem('userPassword', password); // Storing passwords in local storage is not secure.
 
-        alert('Signup successful!');
+      alert('Signup successful!');
     });
-</script>
+  </script>
 </body>
+
 </html>
