@@ -66,6 +66,7 @@ header {
   display: flex;
   height: 60px;
   padding: 10px 20px;
+  padding-right: 0;
   text-align: center;
   align-items: center;
 
