@@ -10,11 +10,11 @@ function SheetHeader({ songTitle, artist }) {
   var userMessage = null;
   var chatbox = useRef(null);
 
-  const createChatLi = (message, className) => {
+  const createChatLi = (message, class_name) => {
     // Create a chat <li> element with passed message and className
     const chatLi = document.createElement("li");
-    chatLi.classList.add("chat", `${className}`);
-    let chatContent = className === "outgoing" ? `<p></p>` : `<span>M</span><p></p>`;
+    chatLi.classList.add(main_styles.chat, main_styles[class_name]);
+    let chatContent = class_name === "outgoing" ? `<p></p>` : `<span>M</span><p></p>`;
     chatLi.innerHTML = chatContent;
     chatLi.querySelector("p").textContent = message;
     return chatLi; // return chat <li> element
