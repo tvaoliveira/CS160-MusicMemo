@@ -4,7 +4,7 @@ import 'react-h5-audio-player/lib/styles.css';
 import { OpenSheetMusicDisplay as OSMD } from 'opensheetmusicdisplay';
 import styles from '../../css/sheet.module.css';
 
-function SheetMusic({ audioSrc, mxlSrc, BPM, measLength }) {
+function SheetMusic({ audioSrc, mxlSrc, BPM, measLength, useSkips }) {
   const buffering = useRef();
   const intId = useRef();
   const standby = useRef();
@@ -47,8 +47,6 @@ function SheetMusic({ audioSrc, mxlSrc, BPM, measLength }) {
   }, [osmd, BPM, mxlSrc])
 
   function defineTiming(bpm) {
-    console.log(osmd.sheet.sourceMeasures[0].tempoInBPM);
-    console.log(1000 * 60 / bpm / 2);
     setIncr(1000 * 60 / bpm / 2);
   }
 
@@ -187,7 +185,7 @@ function SheetMusic({ audioSrc, mxlSrc, BPM, measLength }) {
   }
 
   return (
-    <div class={styles.sheet} >
+    <div class={`${styles.sheet} ${styles.frame}`} >
       <AudioPlayer
         src={audioSrc}
         onCanPlay={() => {

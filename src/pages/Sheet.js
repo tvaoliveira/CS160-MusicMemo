@@ -15,7 +15,7 @@ function Sheet() {
     <div>
       <SheetHeader songTitle={data.title} artist={data.artist} />
       <div class={styles.sideBySide}>
-        <SheetMusic audioSrc={data.audioSrc} mxlSrc={data.mxlSrc} BPM={data.BPM} measLength={data.length} />
+        <SheetMusic audioSrc={data.audioSrc} mxlSrc={data.mxlSrc} BPM={data.BPM} measLength={data.length} useSkips={data.useSkips} />
         <PDFViewer pdfSrc={data.pdfSrc} />
       </div>
     </div>

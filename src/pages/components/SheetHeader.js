@@ -119,7 +119,7 @@ function SheetHeader({ songTitle, artist }) {
             onClick={() => { setOpen(true) }}>
             <img class={main_styles.center} src={imgs.tribar} alt="Open sidebar" />
           </button>
-          <a href="/library" style={{ marginTop: '7px;', cursor: 'pointer' }}>
+          <a href="/library" style={{ marginTop: '7px', cursor: 'pointer' }}>
             <img src={imgs.logo_transparent} alt="musicmemo logo" />
           </a>
 

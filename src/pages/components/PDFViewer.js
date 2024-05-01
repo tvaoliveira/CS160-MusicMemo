@@ -1,4 +1,5 @@
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
+import styles from '../../css/sheet.module.css';
 
 function PDFViewer({ pdfSrc }) {
   const containerRef = useRef(null);
@@ -20,7 +21,9 @@ function PDFViewer({ pdfSrc }) {
   }, [pdfSrc]);
 
   return (
-    <div ref={containerRef} style={{ width: "100%", height: "100vh" }}></div>
+    <div class={styles.frame}>
+      <div ref={containerRef} style={{ width: "100%", height: "100vh" }}></div>
+    </div>
   )
 }
 
