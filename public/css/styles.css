@@ -139,6 +139,7 @@ header {
   /* max-width: 100%; */
   filter: brightness(100%);
   transition: filter .2s ease;
+  cursor: pointer;
 }
 
 .song-item img:hover {

@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="/images/musememo-favicon.png">
     <script
         src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+    <script type="module" src="./gallery.js"></script>
 </head>
 
 <body>
@@ -16,27 +17,52 @@
         <div class="header-left">
             <img src="/images/MusicMemoLogo-transparent.png" alt="musicmemo logo">
         </div>
-        <div class="header-right">
-            <a href="/" class="nav-button">Logout</a>
-        </div>
     </header>
     <main>
         <h1>Your library</h1>
         <div class="shelf">
-            <div class="song-item">
-                <a href="/gallery">
-                    <img src="/images/pachelbel-cover.png" alt="music cover">
-                </a>
+            <div class="song-item" data-song-id="canonind">
+                <!-- <a href="/Cannon_in_D.html"> -->
+                <img src="/images/pachelbel-cover.png" alt="music cover">
+                <!-- </a> -->
                 <div class="song-title">Canon in D</div>
                 <div class="artist-name">Johann Pachelbel</div>
             </div>
-            <div class="song-item">
+            <div class="song-item" data-song-id="wethands">
                 <img src="/images/c418-cover.jpg" alt="music cover">
                 <div class="song-title">Wet Hands</div>
                 <div class="artist-name">C418</div>
             </div>
+            <div class="song-item" data-song-id="clocks">
+                <!-- <a href="/Clocks.html"> -->
+                <img src="/images/Clocks_cover.jpg" alt="music cover">
+                <!-- </a> -->
+                <div class="song-title">Clocks</div>
+                <div class="artist-name">Coldplay</div>
+            </div>
+            <div class="song-item" data-song-id="sweden">
+                <!-- <a href="/Sweden.html"> -->
+                <img src="/images/Sweden_cover.jpeg" alt="music cover">
+                <!-- </a> -->
+                <div class="song-title">Sweden</div>
+                <div class="artist-name">Minecraft - akosmo</div>
+            </div>
+            <div class="song-item" data-song-id="funeralmarch">
+                <!-- <a href="/Chopin.html"> -->
+                <img src="/images/chopin_cover.jpeg" alt="music cover">
+                <!-- </a> -->
+                <div class="song-title">Sonate Op. 35</div>
+                <div class="artist-name">Chopin Funeral March</div>
+            </div>
+            <div class="song-item" data-song-id="carolofthebells">
+                <!-- <a href="/Carol.html"> -->
+                <img src="/images/Carol_of_the_Bells_cover.jpg" alt="music cover">
+                <!-- </a> -->
+                <div class="song-title">Carol of the Bells </div>
+                <div class="artist-name">William J. Rose</div>
+            </div>
         </div>
-
+        </div>
     </main>
 
 </body>

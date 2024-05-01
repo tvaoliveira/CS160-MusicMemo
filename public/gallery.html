@@ -12,7 +12,7 @@
   <script type="module" src="./gallery.js"></script>
 </head>
 
-<body>
+<body onload="window.galleryinit()">
   <header>
     <div class="header-left">
       <button class="chatbot-toggler" id="toggle1">
@@ -20,14 +20,12 @@
       </button>
       <a href="/library" style="margin-top: 7px; cursor: pointer;"><img src="/images/MusicMemoLogo-transparent.png"
           alt="musicmemo logo"></a>
+
     </div>
-    <div class="header-center">
+    <div class="header-right">
       <h2 id="song-title">Canon in D</h2>
       <h3>Johann Pachelbel</h3>
       <!-- <h2>Back to Gallery</h2> -->
-    </div>
-    <div class="header-right">
-      <a href="/library" class="nav-button">Library</a>
     </div>
   </header>
 
@@ -35,6 +33,11 @@
     <button class="chatbot-toggler" id="toggle2">
       <img class="center" src="/images/left-arrow.png">
     </button>
+    <div class="menu-buttons">
+      <a href="/library" class="nav-button">Library</a>
+      <a class="nav-button" style="color: rgb(235, 140, 152); background-color: #dddddd;">Music Room</a>
+      <a href="/" class="nav-button">Logout</a>
+    </div>
 
     <div class="info-text-box">
       <div class="info-text">Have a question?</div>
