@@ -265,6 +265,7 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.25s;
+  background-color: #f4f4f9;
   text-align: left;
   font-size: 18px;
   text-decoration: none;
