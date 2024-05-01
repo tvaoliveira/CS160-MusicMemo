@@ -10,11 +10,11 @@ function SheetHeader({ songTitle, artist }) {
   var userMessage = null;
   var chatbox = useRef(null);
 
-  const createChatLi = (message, className) => {
+  const createChatLi = (message, class_name) => {
     // Create a chat <li> element with passed message and className
     const chatLi = document.createElement("li");
-    chatLi.classList.add("chat", `${className}`);
-    let chatContent = className === "outgoing" ? `<p></p>` : `<span>M</span><p></p>`;
+    chatLi.classList.add(main_styles.chat, main_styles[class_name]);
+    let chatContent = class_name === "outgoing" ? `<p></p>` : `<span>M</span><p></p>`;
     chatLi.innerHTML = chatContent;
     chatLi.querySelector("p").textContent = message;
     return chatLi; // return chat <li> element
@@ -76,8 +76,14 @@ function SheetHeader({ songTitle, artist }) {
             onClick={() => { setOpen(false) }}>
             <img class={main_styles.center} src={imgs.left_arrow} alt="Back Arrow" />
           </button>
-          <h1>Have a question?</h1>
-          <h1>Ask our AI Chatbot Melody!</h1>
+          <div class={main_styles.info_text_box}>
+            <div class={main_styles.info_text}>
+            Have a question?
+            </div>
+            <div class={main_styles.info_text}>
+            Ask our AI Chatbot Melody!
+            </div>
+          </div>
 
           <div class={main_styles.chatbot}>
             <header>
