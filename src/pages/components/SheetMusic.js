@@ -11,6 +11,8 @@ function SheetMusic({ audioSrc, mxlSrc, BPM, measLength, useSkips }) {
   const [currTime, setTime] = useState(0);
   const [currOsmd, defOsmd] = useState();
   const [incr, setIncr] = useState(405.405);
+  const [playback, bufferPlayback] = useState({});
+  const [maxMeasure, setMaxMeasure] = useState(0);
   const audioRef = useRef();
   var osmd;
 
@@ -42,6 +44,7 @@ function SheetMusic({ audioSrc, mxlSrc, BPM, measLength, useSkips }) {
         defOsmd(osmdCpy);
         loadCheckpoints(osmdCpy);
         defineTiming(BPM);
+        prebuffer(osmdCpy);
       });
     }
   }, [osmd, BPM, mxlSrc])
@@ -51,9 +54,9 @@ function SheetMusic({ audioSrc, mxlSrc, BPM, measLength, useSkips }) {
   }
 
   function loadCheckpoints(osmd) {
-    for (let i=0; i<osmd.graphic.measureList.length; i++) {
+    for (let i = 0; i < osmd.graphic.measureList.length; i++) {
       const measures = osmd.graphic.measureList[i];
-      for (let j=0; j<measures.length; j++) {
+      for (let j = 0; j < measures.length; j++) {
         const measure = measures[j];
         if (measure && !measure.hasOnlyRests) {
           for (var k = 0; k < measure.staffEntries.length; k++) {
@@ -62,26 +65,89 @@ function SheetMusic({ audioSrc, mxlSrc, BPM, measLength, useSkips }) {
             const x = se.PositionAndShape.AbsolutePosition.x;
             const index = se.relInMeasureTimestamp.realValue * 8;
             const id = `CHECKPOINT:${measure.measureNumber}-${index}`
-            osmd.Drawer.DrawOverlayLine({x: x, y: y}, {x: x, y: y - 6}, osmd.graphic.MusicPages[0], "transparent", 1.5, id);
+            osmd.Drawer.DrawOverlayLine({ x: x, y: y }, { x: x, y: y - 6 }, osmd.graphic.MusicPages[0], "transparent", 1.5, id);
           }
         }
       }
     }
 
     var els = document.getElementsByClassName('vf-line');
-      Array.prototype.forEach.call(els, (elem) => {
-        if (elem.id.includes('CHECKPOINT')) {
-          var coords = elem.id.split(':')[1];
-          var measure = coords.split('-')[0];
-          var index = coords.split('-')[1];
+    Array.prototype.forEach.call(els, (elem) => {
+      if (elem.id.includes('CHECKPOINT')) {
+        var coords = elem.id.split(':')[1];
+        var measure = coords.split('-')[0];
+        var index = coords.split('-')[1];
 
-          elem.addEventListener('click', () => {
-            navigateTo(osmd, measure, index);
-          })
-          elem.style.cursor = 'pointer';
+        elem.addEventListener('click', () => {
+          navigateTo(osmd, measure, index);
+        })
+        elem.style.cursor = 'pointer';
+      }
+    });
+
+  }
+
+  function prebuffer(osmd) {
+    var playbackObj = {};
+    var measureList = osmd.sheet.sourceMeasures;
+    var last = 0;
+    for (let i = 0; i < measureList.length; i++) {
+      var entries = measureList[i].verticalSourceStaffEntryContainers;
+      var topLength = 0;
+      var botLength = 0;
+      var measureArr = []
+      for (let j = 0; j < entries.length; j++) {
+        var staves = entries[j].staffEntries;
+        var top = staves[0];
+        var bot = staves[1];
+        var skips = 0;
+
+        if (top) {
+          topLength = topLength + staves[0].voiceEntries[0].notes[0].length.realValue * 16;
         }
-      });
 
+        if (bot) {
+          botLength = botLength + staves[1].voiceEntries[0].notes[0].length.realValue * 16;
+        }
+
+        while (topLength > 0 && botLength > 0) {
+          topLength = topLength - 1;
+          botLength = botLength - 1;
+          skips = skips + 1;
+        }
+        
+        measureArr.push(skips);
+      }
+
+      playbackObj[i] = measureArr;
+      last = i;
+    }
+    bufferPlayback(playbackObj);
+    setMaxMeasure(last);
+  }
+
+  function startPlaying3() {
+    var sixteenth = incr / 2;
+    var i = 0;
+    var measureArr = playback[i];
+    var delay = 0;
+    console.log(sixteenth);
+    intId.current = setInterval(() => {
+      if (measureArr.length === 0) {
+        i++;
+        if (i > maxMeasure) {
+          clearInterval(intId.current);
+        }
+        measureArr = playback[i];
+        console.log(measureArr);
+      }
+      if (delay === 0) {
+        delay = delay + measureArr.shift();
+        currOsmd.cursor.next();
+      } else {
+        delay = delay - 1;
+      }
+    }, sixteenth);
   }
 
   function startPlaying2() {
@@ -96,7 +162,7 @@ function SheetMusic({ audioSrc, mxlSrc, BPM, measLength, useSkips }) {
         length = measure.verticalSourceStaffEntryContainers.length - 1;
         skips = measLength - 1 - length;
       }
-      
+
       if (index < length) {
         currOsmd.cursor.next();
       } else if (index >= length) {
@@ -186,6 +252,16 @@ function SheetMusic({ audioSrc, mxlSrc, BPM, measLength, useSkips }) {
 
   return (
     <div class={`${styles.sheet} ${styles.frame}`} >
+      <button onClick={() => {
+        currOsmd.cursor.next();
+      }}>
+        next
+      </button>
+      <button onClick={() => {
+        console.log(currOsmd)
+      }}>
+        print
+      </button>
       <AudioPlayer
         src={audioSrc}
         onCanPlay={() => {
@@ -197,7 +273,7 @@ function SheetMusic({ audioSrc, mxlSrc, BPM, measLength, useSkips }) {
           }
         }}
         onPlay={() => {
-          startPlaying2();
+          startPlaying3();
           standby.current = false;
         }}
         onPause={() => {
