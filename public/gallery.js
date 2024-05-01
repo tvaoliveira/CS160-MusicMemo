@@ -46,6 +46,18 @@ window.galleryinit = () => {
 
 	const songData = songAssets[songId];
 
+	// populate song and artist name
+	const headerCenter = document.querySelector('.header-center');
+	const songTitle = document.createElement('h2');
+	songTitle.textContent = songData.title;
+	songTitle.id = 'song-title';
+	const artistName = document.createElement('h3');
+	artistName.textContent = songData.artist;
+
+	headerCenter.appendChild(songTitle);
+	headerCenter.appendChild(artistName);
+
+	// render pdf
 	const baseUrl = `${window.location.protocol}//${window.location.host}/assets/`;
 
 	PSPDFKit.load({
