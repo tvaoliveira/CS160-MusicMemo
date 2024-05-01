@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react';
 import Drawer from '@mui/material/Drawer';
 import imgs from '../../images/images.js';
-import '../../css/main.css';
+import styles from '../../css/styles.module.css';
+import main_styles from '../../css/main.module.css';
 
-function SheetHeader({ songTitle }) {
+function SheetHeader({ songTitle, artist }) {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState('');
   var userMessage = null;
@@ -68,27 +69,27 @@ function SheetHeader({ songTitle }) {
   }
 
   return (
-    <div>
+    <div class={styles.bodyCopy}>
       <Drawer open={open} onClose={() => { setOpen(false) }}>
-        <div class="sidebar">
-          <button class="chatbot-toggler" id="toggle2"
+        <div class={main_styles.sidebar}>
+          <button class={main_styles.chatbot_toggler} id={main_styles['toggle2']}
             onClick={() => { setOpen(false) }}>
-            <img class="center" src={imgs.left_arrow} alt="Back Arrow"/>
+            <img class={main_styles.center} src={imgs.left_arrow} alt="Back Arrow" />
           </button>
           <h1>Have a question?</h1>
           <h1>Ask our AI Chatbot Melody!</h1>
 
-          <div class="chatbot">
+          <div class={main_styles.chatbot}>
             <header>
               <h2>Melody</h2>
             </header>
-            <ul class="chatbox" ref={chatbox}>
-              <li class="chat incoming">
+            <ul class={main_styles.chatbox} ref={chatbox}>
+              <li class={`${main_styles.chat} ${main_styles.incoming}`}>
                 <span>M</span>
                 <p>Hi there 👋<br />How can I help you?</p>
               </li>
             </ul>
-            <div class="chat-input"
+            <div class={main_styles.chat_input}
               onKeyDown={(e) => {
                 // If Enter key is pressed without Shift key and the window 
                 // width is greater than 800px, handle the chat
@@ -107,20 +108,24 @@ function SheetHeader({ songTitle }) {
         </div>
       </Drawer>
       <header>
-        <div class="header-left">
-          <button class="chatbot-toggler" id="toggle1"
+        <div class={styles.header_left}>
+          <button class={main_styles.chatbot_toggler}
             onClick={() => { setOpen(true) }}>
-            <img class="center" src={imgs.tribar} alt="Open sidebar"/>
+            <img class={main_styles.center} src={imgs.tribar} alt="Open sidebar" />
           </button>
           <a href="/library" style={{ marginTop: '7px;', cursor: 'pointer' }}>
             <img src={imgs.logo_transparent} alt="musicmemo logo" />
           </a>
 
         </div>
-        <div class="header-center">
+        <div class={styles.header_center}>
+          <div class={styles.song_and_artist}>
+          <h2>{songTitle}</h2>
+          <h3>{artist}</h3>
+          </div>
         </div>
-        <div class="header-right">
-          <a href="/library" class="nav-button">Back to library</a>
+        <div class={styles.header_right}>
+          <a href="/library" class={main_styles.nav_button}>Back to library</a>
         </div>
       </header>
     </div>

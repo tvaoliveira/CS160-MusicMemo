@@ -62,6 +62,13 @@ body {
   line-height: 1.6;
 }
 
+.bodyCopy {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
 header {
   display: flex;
   height: 60px;
@@ -75,44 +82,44 @@ header {
   /* color: #ffffff; */
 }
 
-.header-right {
+.header_right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.header-center {
+.header_center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.header-left {
+.header_left {
   display: flex;
   align-items: center;
 }
 
-.header-left,
-.header-center,
-.header-right {
+.header_left,
+.header_center,
+.header_right {
   flex-grow: 1;
   width: 33.33%;
 }
 
-.header-logo {
+.header_logo {
   max-height: 40px;
   height: 40px;
 }
 
-.header-left img {
+.header_left img {
   z-index: 10;
   max-height: 40px;
   height: 40px;
   /* margin-right: 10px; */
 }
 
-.header-left button {
+.header_left button {
   margin-right: 10px;
 }
 
@@ -123,7 +130,7 @@ header {
   overflow-x: auto;
 }
 
-.song-item {
+.song_item {
   /* flex: 0; */
   width: 240px;
   /* height: 240px; */
@@ -132,7 +139,7 @@ header {
   overflow: hidden;
 }
 
-.song-item img {
+.song_item img {
   height: auto;
   width: 100%;
   object-fit: cover;
@@ -142,7 +149,7 @@ header {
   cursor: pointer;
 }
 
-.song-item img:hover {
+.song_item img:hover {
   /* note: adjusting transparency of pseudo element cover is less clean */
   /* transition: background-color .2s linear; */
   filter: brightness(80%);
@@ -150,13 +157,13 @@ header {
 
 }
 
-.song-title {
+.song_title {
   margin-top: 4px;
   font-size: 18px;
   color: #444444;
 }
 
-.artist-name {
+.artist_name {
   font-size: 16px;
   color: #777777;
 }
@@ -168,19 +175,35 @@ main {
   gap: 20px;
 }
 
-.music-section {
+.music_section {
   background: white;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
-.pdf-viewer {
+.pdf_viewer {
   width: 100%;
   height: 500px;
   /* Adjust as necessary */
   border: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.song_and_artist {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+
+  h2 {
+    font-size: 1em; 
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 0.7em; 
+    font-weight: 400;
+  }
 }
 
 /* Responsive adjustments */

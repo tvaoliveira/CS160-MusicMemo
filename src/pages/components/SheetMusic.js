@@ -12,11 +12,11 @@ function SheetMusic({ audioSrc, mxlSrc, BPM, measLength }) {
   const [currOsmd, defOsmd] = useState();
   const [incr, setIncr] = useState(405.405);
   const audioRef = useRef();
-  var osmd = useRef();
+  var osmd;
 
 
   useEffect(() => {
-    osmd.current = new OSMD("osmddiv", {
+    osmd = new OSMD("osmddiv", {
       autoResize: false,
       backend: "svg",
       alignRests: 1,
@@ -25,21 +25,22 @@ function SheetMusic({ audioSrc, mxlSrc, BPM, measLength }) {
   }, [])
 
   useEffect(() => {
-    if (osmd.current) {
-      osmd.load(mxlSrc).then(() => {
-        osmd.render();
+    if (osmd) {
+      var osmdCpy = osmd;
+      osmdCpy.load(mxlSrc).then(() => {
+        osmdCpy.render();
       }).then(() => {
-        var cursor = osmd.Cursor;
+        var cursor = osmdCpy.Cursor;
         cursor.SkipInvisibleNotes = false;
         cursor.CursorOptions = {
           type: 0,
           color: "#dab4e8",
         }
       }).then(() => {
-        osmd.cursor.show();
+        osmdCpy.cursor.show();
       }).then(() => {
-        defOsmd(osmd);
-        loadCheckpoints(osmd);
+        defOsmd(osmdCpy);
+        loadCheckpoints(osmdCpy);
         defineTiming(BPM);
       });
     }

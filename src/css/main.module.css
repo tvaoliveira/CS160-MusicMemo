@@ -18,6 +18,8 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 100px;
   font-weight: 100;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
 }
 
 .mainButtons {
@@ -63,7 +65,6 @@
   /* background: 248, 249, 250; */
 
   /* padding-top: 3%; */
-  /* display: none; */
 }
 
 .sidebar h1 {
@@ -76,7 +77,7 @@
   margin-bottom: 2%
 }
 
-.chatbot-toggler {
+.chatbot_toggler {
   /* position: fixed; */
   /* z-index: 10; */
   height: 40px;
@@ -93,7 +94,7 @@
   left: 0; */
 }
 
-.chatbot-toggler:active {
+.chatbot_toggler:active {
   background: rgb(178, 133, 139);
   /* transition: background .2s linear; */
 }
@@ -213,7 +214,7 @@
   background: #f2f2f2;
 }
 
-.chatbot .chat-input {
+.chatbot .chat_input {
   display: flex;
   gap: 5px;
   position: absolute;
@@ -225,7 +226,7 @@
   border-radius: 0px 0px 15px 15px;
 }
 
-.chat-input textarea {
+.chat_input textarea {
   height: 80px;
   width: 100%;
   border: none;
@@ -236,7 +237,7 @@
   font-size: 0.95rem;
 }
 
-.chat-input span {
+.chat_input span {
   align-self: flex-end;
   color: rgba(139, 35, 52, 0.694);
   cursor: pointer;
@@ -247,16 +248,16 @@
   font-size: 1.35rem;
 }
 
-.chat-input textarea:valid~span {
+.chat_input textarea:valid~span {
   visibility: visible;
 }
 
 /* sidebar nav buttons */
-.nav-buttons {
+.nav_buttons {
   margin-top: 20px;
 }
 
-.nav-button {
+.nav_button {
   display: block;
   margin: 0;
   padding: 16px;
@@ -269,13 +270,13 @@
   text-decoration: none;
 }
 
-.nav-button:hover {
+.nav_button:hover {
   background-color: rgb(234, 185, 192);
 }
 
 
 /* informational text */
-.info-text-box {
+.info_text_box {
   background-color: #cccccc;
   position: relative;
   margin: auto;
@@ -285,7 +286,7 @@
   border-radius: 10px;
 }
 
-.info-text {
+.info_text {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
   width: 90%;

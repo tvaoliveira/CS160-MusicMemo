@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import '../css/main.css';
 import imgs from '../images/images.js';
 
 function Nav() {

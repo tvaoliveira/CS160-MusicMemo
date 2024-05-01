@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
-import '../css/styles.css';
 import imgs from '../images/images.js';
+import main_styles from '../css/main.module.css';
+import styles from '../css/styles.module.css';
 
 function Library() {
   let navigate = useNavigate();
@@ -12,62 +13,62 @@ function Library() {
 
   if (window.sessionStorage.getItem("authSuccess") === "true") {
     return (
-      <div>
+      <div class={styles.bodyCopy}>
         <header>
-          <div class="header-left">
+          <div class={styles.header_left}>
             <img src={imgs.logo_transparent} alt="musicmemo logo" />
           </div>
-          <div class="header-right">
+          <div class={styles.header_right}>
             <button onClick={() => {
               window.sessionStorage.setItem("authSuccess", "false");
               navigate('/');
-            }} class="nav-button">Logout</button>
+            }} class={main_styles.nav_button}>Logout</button>
           </div>
         </header>
         <main>
           <h1>Your library</h1>
-          <div class="shelf">
-            <div class="song-item" data-song-id="canonind">
+          <div class={styles.shelf}>
+            <div class={styles.song_item} data-song-id="canonind">
               <img src={imgs.pachelbel_cover} alt="music cover"
                 onClick={(e) => renderSheet('canonind')}
               />
-              <div class="song-title">Canon in D</div>
-              <div class="artist-name">Johann Pachelbel</div>
+              <div class={styles.song_title}>Canon in D</div>
+              <div class={styles.artist_name}>Johann Pachelbel</div>
             </div>
-            <div class="song-item" data-song-id="wethands">
+            <div class={styles.song_item} data-song-id="wethands">
               <img src={imgs.c418_cover} alt="music cover"
                 onClick={(e) => renderSheet('wethands')}
               />
-              <div class="song-title">Wet Hands</div>
-              <div class="artist-name">C418</div>
+              <div class={styles.song_title}>Wet Hands</div>
+              <div class={styles.artist_name}>C418</div>
             </div>
-            <div class="song-item" data-song-id="clocks">
+            <div class={styles.song_item} data-song-id="clocks">
               <img src={imgs.clocks_cover} alt="music cover"
                 onClick={(e) => renderSheet('clocks')}
               />
-              <div class="song-title">Clocks</div>
-              <div class="artist-name">Coldplay</div>
+              <div class={styles.song_title}>Clocks</div>
+              <div class={styles.artist_name}>Coldplay</div>
             </div>
-            <div class="song-item" data-song-id="sweden">
+            <div class={styles.song_item} data-song-id="sweden">
               <img src={imgs.sweden_cover} alt="music cover"
                 onClick={(e) => renderSheet('sweden')}
               />
-              <div class="song-title">Sweden</div>
-              <div class="artist-name">Minecraft - akosmo</div>
+              <div class={styles.song_title}>Sweden</div>
+              <div class={styles.artist_name}>Minecraft - akosmo</div>
             </div>
-            <div class="song-item" data-song-id="funeralmarch">
+            <div class={styles.song_item} data-song-id="funeralmarch">
               <img src={imgs.chopin_cover} alt="music cover"
                 onClick={(e) => renderSheet('funeralmarch')}
               />
-              <div class="song-title">Sonate Op. 35</div>
-              <div class="artist-name">Chopin Funeral March</div>
+              <div class={styles.song_title}>Sonate Op. 35</div>
+              <div class={styles.artist_name}>Chopin Funeral March</div>
             </div>
-            <div class="song-item" data-song-id="carolofthebells">
+            <div class={styles.song_item} data-song-id="carolofthebells">
               <img src={imgs.carol_cover} alt="music cover"
                 onClick={(e) => renderSheet('carolofthebells')}
               />
-              <div class="song-title">Carol of the Bells </div>
-              <div class="artist-name">William J. Rose</div>
+              <div class={styles.song_title}>Carol of the Bells </div>
+              <div class={styles.artist_name}>William J. Rose</div>
             </div>
           </div>
         </main>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import '../css/main.css';
 import Nav from './Nav.js';
 
 function SignUp() {

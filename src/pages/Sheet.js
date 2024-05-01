@@ -12,7 +12,7 @@ function Sheet() {
 
   return (
     <div>
-      <SheetHeader songTitle={data.title} />
+      <SheetHeader songTitle={data.title} artist={data.artist} />
       <SheetMusic audioSrc={data.audioSrc} mxlSrc={data.mxlSrc} BPM={data.BPM} measLength={data.length} />
       <PDFViewer pdfSrc={data.pdfSrc} />
     </div>
