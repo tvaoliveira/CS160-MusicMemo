@@ -76,8 +76,14 @@ function SheetHeader({ songTitle, artist }) {
             onClick={() => { setOpen(false) }}>
             <img class={main_styles.center} src={imgs.left_arrow} alt="Back Arrow" />
           </button>
-          <h1>Have a question?</h1>
-          <h1>Ask our AI Chatbot Melody!</h1>
+          <div class={main_styles.info_text_box}>
+            <div class={main_styles.info_text}>
+            Have a question?
+            </div>
+            <div class={main_styles.info_text}>
+            Ask our AI Chatbot Melody!
+            </div>
+          </div>
 
           <div class={main_styles.chatbot}>
             <header>
