@@ -1,3 +1,42 @@
+const songAssets = {
+    "canonind": {
+        title: "Canon in D",
+        artist: "Johann Pachelbel",
+        audioSrc: "./music_source/cannon/Cannon_in_D.mp3",
+        pdfsrc: "./music_source/cannon/Cannon_in_D.pdf",
+    },
+    "carolofthebells": {
+        title: "Carol of the Bells",
+        artist: "William J. Rose",
+        audioSrc: "./music_source/Carol_of_the_Bells/Carol_of_the_Bells.mp3",
+        pdfsrc: "./music_source/Carol_of_the_Bells/Carol_of_the_Bells.pdf",
+    },
+    "funeralmarch": {
+        title: "Sonate Op. 35 - Funeral March",
+        artist: "Frederic Chopin",
+        audioSrc: "./music_source/Chopin-Funeral_March/Chopin_-_Funeral_March.mp3",
+        pdfsrc: "./music_source/Chopin-Funeral_March/Chopin_-_Funeral_March.pdf",
+    },
+    "sweden": {
+        title: "Sweden",
+        artist: "C418",
+        audioSrc: "./music_source/Sweden_Minecraft/Sweden_Minecraft.mp3",
+        pdfsrc: "./music_source/Sweden_Minecraft/Sweden_Minecraft.pdf",
+    },
+    "clocks": {
+        title: "Clocks",
+        artist: "Coldplay",
+        audioSrc: "./music_source/Clocks–Coldplay/Clocks__Coldplay.mp3",
+        pdfsrc: "./music_source/Clocks–Coldplay/Clocks__Coldplay.pdf",
+    },
+    "wethands": {
+        title: "Wet Hands",
+        artist: "C418",
+        audioSrc: "./music_source/wet_hands_minecraft/Wet_Hands_Minecraft.mp3",
+        pdfsrc: "./music_source/wet_hands_minecraft/Wet_Hands_Minecraft.pdf",
+    },
+};
+
 const chatbotToggler = document.querySelector(".chatbot-toggler");
 const chatbox = document.querySelector(".chatbox");
 const chatInput = document.querySelector(".chat-input textarea");
@@ -6,8 +45,14 @@ const sidebar = document.querySelector(".sidebar");
 const toggle1 = document.querySelector("#toggle1");
 const toggle2 = document.querySelector("#toggle2");
 const toggleIcon = document.querySelector(".center");
-const songTitle = document.querySelector("#song-title");
+// const songTitle = document.querySelector("#song-title");
 
+// have to fetch song title from url param due to gallery.js (and loading the title) after chatbot.js
+// gallery.js loads after due to type=module (i.e. b/c it has to import pspdfkit.js)
+const urlparams = new URLSearchParams(window.location.search);
+const songId = urlparams.get('songId');
+const songData = songAssets[songId];
+const songTitle = songData.title;
 
 let userMessage = null; // Variable to store user's message
 
@@ -24,7 +69,9 @@ const createChatLi = (message, className) => {
 const generateResponse = async (chatElement) => {
     const API_URL = "https://noggin.rea.gent/light-marsupial-7017";
     const messageElement = chatElement.querySelector("p");
-    console.log(userMessage);
+    // console.log(userMessage);
+    // console.log(songTitle);
+    // console.log(songData);
 
     try {
         const response = await fetch(API_URL, {
@@ -35,7 +82,7 @@ const generateResponse = async (chatElement) => {
             },
             body: JSON.stringify({
                 "question": userMessage,
-                "song": songTitle.textContent
+                "song": songTitle
             }),
         });
         const data = await response.text()
