@@ -1,0 +1,14 @@
+.sideBySide {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  > * {
+    margin: 0.5em !important;
+    border-radius: 25%;
+  }
+}
+
+.sheet {
+  min-width: 50%;
+}

@@ -2,9 +2,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import { OpenSheetMusicDisplay as OSMD } from 'opensheetmusicdisplay';
+import styles from '../../css/sheet.module.css';
 
 function SheetMusic({ audioSrc, mxlSrc, BPM, measLength }) {
-  const loaded = useRef();
   const buffering = useRef();
   const intId = useRef();
   const standby = useRef();
@@ -187,11 +187,11 @@ function SheetMusic({ audioSrc, mxlSrc, BPM, measLength }) {
   }
 
   return (
-    <div>
+    <div class={styles.sheet} >
       <AudioPlayer
         src={audioSrc}
         onCanPlay={() => {
-          if (loaded.current && !buffering.current && standby.current) {
+          if (!buffering.current && standby.current) {
             if (Math.abs(audioRef.current.audio.current.currentTime - currTime) > 1) {
               standby.current = false;
               recalculate();
