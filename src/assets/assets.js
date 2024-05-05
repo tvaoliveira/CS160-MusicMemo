@@ -25,8 +25,6 @@ var assets = {
     pdfSrc: canonindpdf,
     mxlSrc: canonindmxl,
     BPM: 60,
-    length: 8,
-    useSkips: false,
   },
   "carolofthebells": {
     title: "Carol of the Bells",
@@ -35,8 +33,6 @@ var assets = {
     pdfSrc: carolofthebellspdf,
     mxlSrc: carolofthebellsmxl,
     BPM: 180,
-    length: 6,
-    useSkips: false,
   },
   "funeralmarch": {
     title: "Sonate Op. 35 - Funeral March",
@@ -45,8 +41,6 @@ var assets = {
     pdfSrc: funeralmarchpdf,
     mxlSrc: funeralmarchmxl,
     BPM: 48,
-    length: 8,
-    useSkips: false,
   },
   "sweden": {
     title: "Sweden",
@@ -55,8 +49,6 @@ var assets = {
     pdfSrc: swedenpdf,
     mxlSrc: swedenmxl,
     BPM: 44,
-    length: 4,
-    useSkips: false,
   },
   "clocks": {
     title: "Clocks",
@@ -64,9 +56,7 @@ var assets = {
     audioSrc: clocksmp3,
     pdfSrc: clockspdf,
     mxlSrc: clocksmxl,
-    BPM: 60,
-    length: 8,
-    useSkips: false,
+    BPM: 120,
   },
   "wethands": {
     title: "Wet Hands",
@@ -75,8 +65,6 @@ var assets = {
     pdfSrc: wethandspdf,
     mxlSrc: wethandsmxl,
     BPM: 74,
-    length: 8,
-    useSkips: true,
   },
 }
 export default assets;
