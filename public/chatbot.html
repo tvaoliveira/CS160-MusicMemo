@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI Chatbot</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans"
+      rel="stylesheet"
+    />
+    <!-- let's include the css file for bootstrap, then our custom css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/vendor/bootstrap/css/bootstrap.css"
+    />
+    
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  </head>
+
+  <body>
+    <button class="chatbot-toggler" id="toggle1">
+      <img class="center" src="/images/tribar.png">
+    </button>
+    <div class="sidebar">
+        <button class="chatbot-toggler" id="toggle2">
+          <img class="center" src="/images/tribar.png">
+        </button>
+        <h1>Have a question?</h1>
+        <h1>Ask our AI Chatbot Melody!</h1>
+
+        <div class="chatbot">
+            <header>
+              <h2>Melody</h2>
+            </header>
+            <ul class="chatbox">
+              <li class="chat incoming">
+                <span>M</span>
+                <p>Hi there 👋<br>How can I help you?</p>
+              </li>
+            </ul>
+            <div class="chat-input">
+              <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+              <span id="send-btn">send</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+    
+  </body>
+</html>
