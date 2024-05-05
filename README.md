@@ -4,6 +4,9 @@
 
 `nvm use 18` => Node v18.19, NPM v10.2.3
 
+To start, do
+`npm install && npm start`
+
 ## Available Scripts
 
 In the project directory, you can run:
